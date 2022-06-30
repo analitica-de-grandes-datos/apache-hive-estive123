@@ -13,7 +13,6 @@ Escriba el resultado a la carpeta `output` de directorio de trabajo.
         >>> Escriba su respuesta a partir de este punto <<<
 */
 
-
 DROP TABLE IF EXISTS datos;
 DROP TABLE IF EXISTS ordenada;
 CREATE TABLE datos (C1 STRING,C2 DATE,C3 INT)ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
