@@ -45,4 +45,10 @@ LOAD DATA LOCAL INPATH 'data1.csv' INTO TABLE tbl1;
 /*
     >>> Escriba su respuesta a partir de este punto <<<
 */
-
+DROP TABLE IF EXISTS ordenada;
+CREATE TABLE ordenada
+AS
+SELECT concat_ws(':',collect_list(UPPER(list))) FROM tbl0 LATERAL VIEW explode(c5) result AS list GROUP BY c1;
+INSERT OVERWRITE LOCAL DIRECTORY 'output'
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+SELECT * FROM ordenada;

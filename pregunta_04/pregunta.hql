@@ -44,3 +44,10 @@ LOAD DATA LOCAL INPATH 'data1.csv' INTO TABLE tbl1;
 /*
     >>> Escriba su respuesta a partir de este punto <<<
 */
+DROP TABLE IF EXISTS ordenada;
+CREATE TABLE ordenada
+AS
+SELECT DISTINCT resultado.lista FROM ( SELECT EXPLODE(c5) as lista from tbl0) as resultado;
+INSERT OVERWRITE LOCAL DIRECTORY 'output'
+ROW FORMAT DELIMITED FIELDS TERMINATED BY ','
+SELECT * FROM ordenada;
