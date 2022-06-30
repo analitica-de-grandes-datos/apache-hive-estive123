@@ -27,13 +27,12 @@ CREATE TABLE t0 (
         COLLECTION ITEMS TERMINATED BY ','
         MAP KEYS TERMINATED BY '#'
         LINES TERMINATED BY '\n';
-LOAD DATA LOCAL INPATH 'data.tsv' INTO TABLE t0;
+LOAD DATA LOCAL INPATH 'data.tsv' INTO TABLE t0
 
 /*
     >>> Escriba su respuesta a partir de este punto <<<
 */
-
-  GNU nano 4.8                                                     pregunta.hql                                                               
+                                                            
 DROP TABLE IF EXISTS t0;
 DROP TABLE IF EXISTS ordenada;
 CREATE TABLE t0 (
